@@ -67,11 +67,13 @@ def train_model(model, X, Y, batch_size, n_epochs):
     :param n_epochs: Determine how many times the model should be trained
     :return: The trained model
     """
+    # Load model from file if it exists
     if load_from_file:
         model.load_state_dict(torch.load('entire_model.pt'))
         model.eval()
     else:
         model.train()
+        # Define the optimizer
         optimizer = optim.Adam(model.parameters())
     N = X.size(0)
     L = X.size(1)
@@ -105,9 +107,18 @@ def train_model(model, X, Y, batch_size, n_epochs):
                 break
 
 
-
-
 def test(model, X, Y):
+    """
+    The test function takes a model and test data as input.
+
+    It calculates the probability of each label for each word in
+    each sentence, then compares the predicted labels to true labels to calculate an accuracy percentage.
+
+    :param model: Pass the rnn model to the test function
+    :param X: Pass the input data to the model
+    :param Y: Get the labels for the test data
+    :return: The accuracy of the model on a given dataset
+    """
     probs = model(X) # (bs, M, L)
     _v, indices = torch.max(probs, 2) # (bs, M)
     # show test examples
