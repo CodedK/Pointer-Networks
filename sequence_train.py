@@ -54,6 +54,19 @@ print('Training model initiated...')
 
 # from pointer_network import PointerNetwork
 def train_model(model, X, Y, batch_size, n_epochs):
+    """
+    `train_model` function accepts as inputs a model, training data, batch size, and number of epochs.
+
+    It then iterates through the data in batches of size batch_size for n_epochs number of times.
+    The loss is calculated by taking the negative log likelihood loss function from pytorch's functional module.
+
+    :param model: Pass the model to be trained
+    :param X: Pass the input data to the model
+    :param Y: Calculate the accuracy of the model
+    :param batch_size: Determine how many sequences to process at once
+    :param n_epochs: Determine how many times the model should be trained
+    :return: The trained model
+    """
     if load_from_file:
         model.load_state_dict(torch.load('entire_model.pt'))
         model.eval()
