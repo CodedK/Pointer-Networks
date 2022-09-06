@@ -12,8 +12,7 @@ def generate_single_seq(length=30, min_len=5, max_len=10):
     length: total sequence length
     min_len: minimum length of sequence
     max_len: maximum length of sequence
-    Output:
-    sequence of numbers, index of the start of greater numbers subsequence"""
+    Output: Sequence of numbers, index of the start of greater numbers subsequence"""
     seq_before = [(random.randint(1, 5)) for x in range(random.randint(min_len, max_len))]
     seq_during = [(random.randint(6, 10)) for x in range(random.randint(min_len, max_len))]
     seq_after = [random.randint(1, 5) for x in range(random.randint(min_len, max_len))]
@@ -24,17 +23,14 @@ def generate_single_seq(length=30, min_len=5, max_len=10):
 
 def generate_set_seq(N):
     """
-    The `generate_set_seq` function generates a set of N sequences of fixed length.
+    The `generate_set_seq` function generates a set of N sequences of fixed length for `Boundary tasks`.
     It returns the data, starts and ends lists.
     The data list contains all the sequences in string format.
     The starts list contains all the starting indices for each sequence in integer format, and similarly for ends.
 
     :param N: Generate n sequences
     :return: A list of sequences, a list of starting indices and a list of ending indices
-    :doc-author: Trelent
-    # generate Boundary tasks
     """
-
     data = []
     starts = []
     ends = []
