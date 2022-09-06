@@ -7,8 +7,7 @@ from pointer_network import PointerNetwork
 import my_ext
 import ctypes
 
-# Run in console the following: Nvidia-smi
-
+# `Nvidia-smi` in console for information about GPU
 
 load_from_file = False
 total_size = 1000
