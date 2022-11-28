@@ -11,12 +11,12 @@ import ctypes
 
 load_from_file = False
 total_size = 1000
+input_seq_len = 8
 weight_size = 256
 emb_size = 32 # embedding size of 32
 batch_size = 250 # Smaller values are slower but converge faster {or: 250}
 n_epochs = 500
-input_seq_len = 8
-input, targets = generate_data.make_seq_data(total_size, input_seq_len)
+input, targets = generate_data.make_seq_data(total_size, input_seq_len) # Create 1000 sequences of length 8
 inp_size = input_seq_len
 print('Data sequence was generated.')
 print('Input size:', inp_size)
